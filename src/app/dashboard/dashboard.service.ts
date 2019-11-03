@@ -57,5 +57,4 @@ export class DashboardService {
      return this.http.get(this.baseUrl+'wining-location/'+year)
      .pipe(map(res => res));
    }
-
 }

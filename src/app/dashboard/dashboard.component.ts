@@ -60,6 +60,9 @@ export class DashboardComponent implements OnInit {
     this.winByRuns=0;
     this.teamWinByWickets='';
     this.winByWickets=0;
+    this.winLocationTeam='';
+    this.winningLocation='';
+    this.totalMatches=0;
     try{
       console.log(this.seasonVal);
       let promiseArray=[];
@@ -70,7 +73,6 @@ export class DashboardComponent implements OnInit {
       promiseArray.push(this.dashboardService.getWinByWickets(this.seasonVal).toPromise());
       promiseArray.push(this.dashboardService.getTopFourTeams(this.seasonVal).toPromise());
       promiseArray.push(this.dashboardService.getWinningLocation(this.seasonVal).toPromise());
-
       let result = await Promise.all(promiseArray);
 
       if(result){
